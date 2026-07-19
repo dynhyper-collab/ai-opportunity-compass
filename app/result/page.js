@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { calculateProfile } from '@/lib/scoring';
-import profilesData from '@/data/questions.json';
+import { calculateProfile } from '../../lib/scoring';
+import profilesData from '../../data/questions.json';
 
 export default function ResultPage() {
   const router = useRouter();
