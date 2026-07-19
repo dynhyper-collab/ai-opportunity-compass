@@ -2,108 +2,99 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { calculateProfile } from '@/lib/scoring';
+import profilesData from '@/data/questions.json';
 
 export default function ResultPage() {
   const router = useRouter();
   const [profile, setProfile] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [scores, setScores] = useState(null);
 
   useEffect(() => {
-    // In a real implementation, this would calculate the profile based on quiz selections
-    // For now, we're showing a placeholder profile
-    const mockProfile = {
-      id: 'explorer',
-      name: 'The AI Explorer',
-      icon: '🧭',
-      description:
-        'You are an adaptable and curious professional who sees the potential in AI across multiple domains. You are not confined to a single approach—instead, you explore how AI can be applied to solve problems, create value, and drive innovation in your field.',
-      strengths: [
-        'Curiosity and willingness to experiment with new AI tools and approaches',
-        'Versatility across multiple AI applications and use cases',
-        'Ability to identify opportunities for AI integration in diverse contexts',
-        'Strong foundation for continuous learning and adaptation',
-        'Bridge-builder between technical and non-technical teams'
-      ],
-      trapsToAvoid: [
-        'Lack of focus—trying to do everything at once without prioritizing impact areas',
-        'Superficial understanding—exploring tools without deeply learning key concepts',
-        'Analysis paralysis—over-researching without taking action and building experience',
-        'Ignoring domain expertise—applying generic AI knowledge without industry context',
-        'Neglecting ethics—exploring AI possibilities without considering responsible implementation'
-      ],
-      challenge: {
-        title: '7-Day AI Integration Challenge',
-        description: 'Dive deeper into AI by completing one focused exploration task each day.',
-        days: [
-          {
-            day: 'Day 1',
-            task: 'Identify 3 specific problems in your work that AI could help solve',
-            action: 'List them with a brief description of how AI could help'
-          },
-          {
-            day: 'Day 2',
-            task: 'Explore one AI tool relevant to your industry',
-            action: 'Sign up and complete the tutorial'
-          },
-          {
-            day: 'Day 3',
-            task: 'Learn about a key AI concept you\'ve never explored',
-            action: 'Read one article or watch a 15-minute video'
-          },
-          {
-            day: 'Day 4',
-            task: 'Interview a colleague about their experience with AI',
-            action: 'Document their use case and lessons learned'
-          },
-          {
-            day: 'Day 5',
-            task: 'Prototype a small AI solution for one of your identified problems',
-            action: 'Use existing tools (ChatGPT, Zapier, etc.) to build it'
-          },
-          {
-            day: 'Day 6',
-            task: 'Present your prototype to a peer or mentor',
-            action: 'Get feedback and suggestions for improvement'
-          },
-          {
-            day: 'Day 7',
-            task: 'Reflect and plan next steps',
-            action: 'Document what you learned and commit to one concrete next action'
-          }
-        ]
-      },
-      opportunities: [
-        'Develop expertise in emerging AI applications within your industry',
-        'Lead cross-functional AI adoption initiatives',
-        'Mentor others on AI exploration and implementation',
-        'Create a personal AI toolkit tailored to your specific needs',
-        'Position yourself as an AI-informed leader in your organization'
-      ]
-    };
+    try {
+      // Read answers from localStorage
+      const storedAnswers = localStorage.getItem('quizAnswers');
+      
+      if (!storedAnswers) {
+        setError('No quiz answers found. Please complete the quiz first.');
+        setIsLoading(false);
+        return;
+      }
 
-    setProfile(mockProfile);
-    setIsLoading(false);
+      const answers = JSON.parse(storedAnswers);
+      const questions = profilesData.questions;
+
+      // Calculate user profile using scoring engine
+      const result = calculateProfile(answers, questions);
+      
+      if (!result.primaryProfile) {
+        setError('Unable to calculate profile. Please try again.');
+        setIsLoading(false);
+        return;
+      }
+
+      // Find the primary profile data
+      const primaryProfileData = profilesData.profiles.find(
+        (p) => p.id === result.primaryProfile
+      );
+
+      if (!primaryProfileData) {
+        setError('Profile not found. Please try again.');
+        setIsLoading(false);
+        return;
+      }
+
+      // Build comprehensive profile object
+      const userProfile = {
+        id: primaryProfileData.id,
+        name: primaryProfileData.name,
+        icon: primaryProfileData.icon,
+        description: primaryProfileData.description,
+        color: primaryProfileData.color,
+        opportunities: primaryProfileData.opportunities,
+        skills_to_develop: primaryProfileData.skills_to_develop,
+        score_breakdown: result.scores,
+        secondary_profile: result.secondaryProfile,
+      };
+
+      setProfile(userProfile);
+      setScores(result.scores);
+      setIsLoading(false);
+    } catch (err) {
+      console.error('Error loading profile:', err);
+      setError('An error occurred while loading your profile.');
+      setIsLoading(false);
+    }
   }, []);
 
   const handleRetakingQuiz = () => {
-    sessionStorage.removeItem('quizSelections');
+    localStorage.removeItem('quizAnswers');
     router.push('/quiz');
   };
 
   if (isLoading) {
-    return <div className="flex justify-center items-center h-screen">Loading your profile...</div>;
+    return (
+      <div className="flex justify-center items-center h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="text-center">
+          <div className="text-4xl mb-4">⏳</div>
+          <p className="text-gray-600 font-medium">Loading your profile...</p>
+        </div>
+      </div>
+    );
   }
 
-  if (!profile) {
+  if (error || !profile) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="text-center">
-          <p className="text-gray-600 mb-4">Unable to load your profile</p>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+        <div className="text-center bg-white rounded-lg shadow-xl p-8 max-w-md">
+          <p className="text-gray-600 mb-6 text-lg">{error || 'Unable to load your profile'}</p>
           <button
             onClick={handleRetakingQuiz}
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
           >
-            Retake Quiz
+            Take the Quiz
           </button>
         </div>
       </div>
@@ -121,7 +112,7 @@ export default function ResultPage() {
           <p className="text-gray-600">Discover your unique path in the AI era</p>
         </div>
 
-        {/* Profile Card */}
+        {/* Primary Profile Card */}
         <div className="bg-white rounded-lg shadow-xl p-8 mb-8">
           {/* Profile Header */}
           <div className="text-center mb-8 pb-8 border-b-2 border-indigo-100">
@@ -132,19 +123,37 @@ export default function ResultPage() {
             </p>
           </div>
 
-          {/* Strengths Section */}
+          {/* Score Breakdown Section */}
           <div className="mb-10">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-              <span className="text-2xl mr-3">💪</span>
-              Your Strengths
+              <span className="text-2xl mr-3">📊</span>
+              Your Score Breakdown
             </h3>
-            <div className="space-y-3">
-              {profile.strengths.map((strength, index) => (
-                <div
-                  key={index}
-                  className="p-4 bg-green-50 border-l-4 border-green-500 rounded-r-lg"
-                >
-                  <p className="text-gray-800 font-medium">{strength}</p>
+            <div className="space-y-4">
+              {scores && Object.entries(scores).map(([profileType, score]) => (
+                <div key={profileType} className="flex items-center gap-4">
+                  <div className="flex-1">
+                    <div className="flex justify-between mb-2">
+                      <span className="font-medium text-gray-800 capitalize">
+                        {profileType === 'builder' && '🔨 Builder'}
+                        {profileType === 'analyzer' && '📊 Analyzer'}
+                        {profileType === 'creator' && '🎨 Creator'}
+                        {profileType === 'strategist' && '🎯 Strategist'}
+                      </span>
+                      <span className="text-lg font-bold text-indigo-600">{score}</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-3">
+                      <div
+                        className={`h-3 rounded-full transition-all ${
+                          profileType === 'builder' ? 'bg-blue-500' :
+                          profileType === 'analyzer' ? 'bg-green-500' :
+                          profileType === 'creator' ? 'bg-purple-500' :
+                          'bg-red-500'
+                        }`}
+                        style={{ width: `${score}%` }}
+                      />
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -168,58 +177,22 @@ export default function ResultPage() {
             </div>
           </div>
 
-          {/* Traps to Avoid Section */}
+          {/* Skills to Develop Section */}
           <div className="mb-10">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-              <span className="text-2xl mr-3">⚠️</span>
-              Traps to Avoid
+              <span className="text-2xl mr-3">🎯</span>
+              Skills to Develop
             </h3>
             <div className="space-y-3">
-              {profile.trapsToAvoid.map((trap, index) => (
+              {profile.skills_to_develop.map((skill, index) => (
                 <div
                   key={index}
                   className="p-4 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg"
                 >
-                  <p className="text-gray-800 font-medium">{trap}</p>
+                  <p className="text-gray-800 font-medium">{skill}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* 7-Day Challenge Card */}
-        <div className="bg-white rounded-lg shadow-xl p-8 mb-8">
-          <div className="mb-8 pb-8 border-b-2 border-indigo-100">
-            <h3 className="text-3xl font-bold text-gray-800 mb-2 flex items-center">
-              <span className="text-3xl mr-3">📅</span>
-              {profile.challenge.title}
-            </h3>
-            <p className="text-gray-600 text-lg">{profile.challenge.description}</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {profile.challenge.days.map((dayChallenge, index) => (
-              <div
-                key={index}
-                className="p-6 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg border border-indigo-200 hover:shadow-md transition-shadow"
-              >
-                <h4 className="text-lg font-bold text-indigo-700 mb-3">
-                  {dayChallenge.day}
-                </h4>
-                <div className="mb-3">
-                  <p className="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-1">
-                    Task
-                  </p>
-                  <p className="text-gray-800">{dayChallenge.task}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-1">
-                    Action
-                  </p>
-                  <p className="text-gray-800">{dayChallenge.action}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
 
@@ -243,14 +216,6 @@ export default function ResultPage() {
           >
             Back to Home
           </a>
-        </div>
-
-        {/* Footer Note */}
-        <div className="text-center mt-12 p-6 bg-blue-50 rounded-lg border border-blue-200">
-          <p className="text-gray-700">
-            <span className="font-semibold">💡 Tip:</span> This is a placeholder profile.
-            Complete the quiz to get a personalized profile based on your answers!
-          </p>
         </div>
       </div>
     </div>
