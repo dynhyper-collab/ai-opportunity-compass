@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import questions from '@/data/questions.json';
+import questions from '../../data/questions.json';
 
 export default function QuizPage() {
   const router = useRouter();
