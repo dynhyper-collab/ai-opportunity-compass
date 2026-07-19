@@ -63,8 +63,8 @@ export default function QuizPage() {
   };
 
   const handleSubmit = () => {
-    // Store selections in session storage and navigate to results
-    sessionStorage.setItem('quizSelections', JSON.stringify(selections));
+    // Save answers to localStorage as JSON before navigating
+    localStorage.setItem('quizAnswers', JSON.stringify(selections));
     router.push('/result');
   };
 
