@@ -1,0 +1,371 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "category": "skills",
+      "question": "What is your primary professional background?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "tech",
+          "label": "Technology/Software Development",
+          "score": { "builder": 3, "analyzer": 2, "creator": 1, "strategist": 1 }
+        },
+        {
+          "id": "business",
+          "label": "Business/Management",
+          "score": { "builder": 1, "analyzer": 2, "creator": 1, "strategist": 3 }
+        },
+        {
+          "id": "creative",
+          "label": "Creative/Design",
+          "score": { "builder": 1, "analyzer": 1, "creator": 3, "strategist": 1 }
+        },
+        {
+          "id": "data",
+          "label": "Data/Analytics",
+          "score": { "builder": 2, "analyzer": 3, "creator": 1, "strategist": 1 }
+        },
+        {
+          "id": "other",
+          "label": "Other",
+          "score": { "builder": 1, "analyzer": 1, "creator": 1, "strategist": 1 }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "skills",
+      "question": "How comfortable are you with learning new tools and technologies?",
+      "type": "scale",
+      "scale": {
+        "min": 1,
+        "max": 5,
+        "labels": ["Not comfortable", "Very comfortable"]
+      },
+      "score": {
+        "1": { "builder": 1, "analyzer": 1, "creator": 1, "strategist": 1 },
+        "2": { "builder": 2, "analyzer": 1, "creator": 1, "strategist": 1 },
+        "3": { "builder": 2, "analyzer": 2, "creator": 2, "strategist": 2 },
+        "4": { "builder": 3, "analyzer": 2, "creator": 3, "strategist": 2 },
+        "5": { "builder": 3, "analyzer": 3, "creator": 3, "strategist": 3 }
+      }
+    },
+    {
+      "id": 3,
+      "category": "interests",
+      "question": "Which aspect of AI interests you most?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "implementation",
+          "label": "Building and implementing AI solutions",
+          "score": { "builder": 3, "analyzer": 1, "creator": 1, "strategist": 1 }
+        },
+        {
+          "id": "analysis",
+          "label": "Analyzing data and extracting insights",
+          "score": { "builder": 1, "analyzer": 3, "creator": 1, "strategist": 1 }
+        },
+        {
+          "id": "content",
+          "label": "Creating content and creative applications",
+          "score": { "builder": 1, "analyzer": 1, "creator": 3, "strategist": 1 }
+        },
+        {
+          "id": "strategy",
+          "label": "Strategic planning and organizational impact",
+          "score": { "builder": 1, "analyzer": 1, "creator": 1, "strategist": 3 }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "experience",
+      "question": "How much experience do you have with AI tools or concepts?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "none",
+          "label": "No experience",
+          "score": { "builder": 1, "analyzer": 1, "creator": 2, "strategist": 1 }
+        },
+        {
+          "id": "beginner",
+          "label": "Beginner (familiar with basics)",
+          "score": { "builder": 2, "analyzer": 2, "creator": 2, "strategist": 2 }
+        },
+        {
+          "id": "intermediate",
+          "label": "Intermediate (used AI tools regularly)",
+          "score": { "builder": 2, "analyzer": 3, "creator": 3, "strategist": 2 }
+        },
+        {
+          "id": "advanced",
+          "label": "Advanced (built or deployed AI solutions)",
+          "score": { "builder": 3, "analyzer": 3, "creator": 2, "strategist": 3 }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "goals",
+      "question": "What is your primary goal with AI?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "career",
+          "label": "Advance my career",
+          "score": { "builder": 2, "analyzer": 2, "creator": 1, "strategist": 2 }
+        },
+        {
+          "id": "business",
+          "label": "Improve my business/organization",
+          "score": { "builder": 2, "analyzer": 2, "creator": 2, "strategist": 3 }
+        },
+        {
+          "id": "create",
+          "label": "Create new products or services",
+          "score": { "builder": 3, "analyzer": 1, "creator": 3, "strategist": 2 }
+        },
+        {
+          "id": "learning",
+          "label": "Learn and understand AI better",
+          "score": { "builder": 2, "analyzer": 3, "creator": 1, "strategist": 2 }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "working_style",
+      "question": "How do you prefer to work?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "hands_on",
+          "label": "Hands-on and technical",
+          "score": { "builder": 3, "analyzer": 2, "creator": 2, "strategist": 1 }
+        },
+        {
+          "id": "analytical",
+          "label": "Analytical and data-driven",
+          "score": { "builder": 1, "analyzer": 3, "creator": 1, "strategist": 2 }
+        },
+        {
+          "id": "creative",
+          "label": "Creative and experimental",
+          "score": { "builder": 1, "analyzer": 1, "creator": 3, "strategist": 1 }
+        },
+        {
+          "id": "strategic",
+          "label": "Strategic and planning-focused",
+          "score": { "builder": 1, "analyzer": 2, "creator": 1, "strategist": 3 }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category": "values",
+      "question": "What matters most to you in your work?",
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "innovation",
+          "label": "Innovation and building new things",
+          "score": { "builder": 2, "analyzer": 1, "creator": 3, "strategist": 1 }
+        },
+        {
+          "id": "impact",
+          "label": "Making a positive impact",
+          "score": { "builder": 1, "analyzer": 1, "creator": 1, "strategist": 3 }
+        },
+        {
+          "id": "growth",
+          "label": "Personal growth and learning",
+          "score": { "builder": 2, "analyzer": 2, "creator": 1, "strategist": 1 }
+        },
+        {
+          "id": "autonomy",
+          "label": "Independence and autonomy",
+          "score": { "builder": 2, "analyzer": 1, "creator": 2, "strategist": 1 }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category": "challenges",
+      "question": "What is your biggest challenge with AI adoption?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "knowledge",
+          "label": "Lack of knowledge/skills",
+          "score": { "builder": 2, "analyzer": 1, "creator": 1, "strategist": 1 }
+        },
+        {
+          "id": "resources",
+          "label": "Limited resources or budget",
+          "score": { "builder": 1, "analyzer": 1, "creator": 1, "strategist": 2 }
+        },
+        {
+          "id": "unclear",
+          "label": "Unclear how to apply it",
+          "score": { "builder": 1, "analyzer": 2, "creator": 1, "strategist": 3 }
+        },
+        {
+          "id": "change",
+          "label": "Organizational/cultural resistance",
+          "score": { "builder": 1, "analyzer": 1, "creator": 1, "strategist": 3 }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category": "timeline",
+      "question": "What's your timeline for making an impact with AI?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "immediate",
+          "label": "Immediate (next 3 months)",
+          "score": { "builder": 3, "analyzer": 2, "creator": 2, "strategist": 1 }
+        },
+        {
+          "id": "short",
+          "label": "Short-term (3-6 months)",
+          "score": { "builder": 2, "analyzer": 2, "creator": 2, "strategist": 2 }
+        },
+        {
+          "id": "medium",
+          "label": "Medium-term (6-12 months)",
+          "score": { "builder": 2, "analyzer": 2, "creator": 2, "strategist": 2 }
+        },
+        {
+          "id": "long",
+          "label": "Long-term (1+ years)",
+          "score": { "builder": 1, "analyzer": 1, "creator": 1, "strategist": 2 }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category": "industry",
+      "question": "Which industry or sector are you in?",
+      "type": "single-choice",
+      "options": [
+        {
+          "id": "tech",
+          "label": "Technology",
+          "score": { "builder": 3, "analyzer": 2, "creator": 2, "strategist": 2 }
+        },
+        {
+          "id": "finance",
+          "label": "Finance/Banking",
+          "score": { "builder": 1, "analyzer": 3, "creator": 1, "strategist": 2 }
+        },
+        {
+          "id": "healthcare",
+          "label": "Healthcare",
+          "score": { "builder": 2, "analyzer": 2, "creator": 1, "strategist": 2 }
+        },
+        {
+          "id": "retail",
+          "label": "Retail/E-commerce",
+          "score": { "builder": 2, "analyzer": 2, "creator": 2, "strategist": 2 }
+        },
+        {
+          "id": "creative",
+          "label": "Creative/Media",
+          "score": { "builder": 1, "analyzer": 1, "creator": 3, "strategist": 1 }
+        },
+        {
+          "id": "other",
+          "label": "Other",
+          "score": { "builder": 1, "analyzer": 1, "creator": 1, "strategist": 1 }
+        }
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "id": "builder",
+      "name": "The AI Builder",
+      "description": "You're hands-on and technical. Your strength lies in implementing AI solutions and building practical applications.",
+      "color": "blue",
+      "icon": "🔨",
+      "opportunities": [
+        "Develop custom AI solutions",
+        "Build AI-powered products",
+        "Contribute to open-source AI projects",
+        "Become an AI engineer or developer",
+        "Create automation workflows"
+      ],
+      "skills_to_develop": [
+        "Machine Learning fundamentals",
+        "Python and relevant frameworks (TensorFlow, PyTorch)",
+        "API development and integration",
+        "DevOps and deployment skills"
+      ]
+    },
+    {
+      "id": "analyzer",
+      "name": "The Data Analyst",
+      "description": "You excel at extracting insights from data. Your opportunity lies in leveraging AI for advanced analytics and decision-making.",
+      "color": "green",
+      "icon": "📊",
+      "opportunities": [
+        "Become a data scientist or ML specialist",
+        "Lead data-driven decision making",
+        "Build predictive analytics models",
+        "Create business intelligence dashboards",
+        "Advise organizations on data strategy"
+      ],
+      "skills_to_develop": [
+        "Statistical analysis and hypothesis testing",
+        "Advanced SQL and database optimization",
+        "Data visualization and communication",
+        "Business acumen and strategy"
+      ]
+    },
+    {
+      "id": "creator",
+      "name": "The Creative Innovator",
+      "description": "You're creative and imaginative. Your opportunity is in using AI to amplify creativity and create novel solutions.",
+      "color": "purple",
+      "icon": "🎨",
+      "opportunities": [
+        "Create AI-generated content and media",
+        "Design innovative user experiences",
+        "Launch AI-powered creative services",
+        "Develop creative applications",
+        "Explore new art and entertainment possibilities"
+      ],
+      "skills_to_develop": [
+        "Prompt engineering and AI tool mastery",
+        "Design thinking and ideation",
+        "Content strategy and storytelling",
+        "User experience and design principles"
+      ]
+    },
+    {
+      "id": "strategist",
+      "name": "The Strategic Leader",
+      "description": "You think big picture. Your strength is in organizational strategy and leadership in the AI era.",
+      "color": "red",
+      "icon": "🎯",
+      "opportunities": [
+        "Lead AI transformation initiatives",
+        "Develop organizational AI strategy",
+        "Manage AI projects and teams",
+        "Advise on ethical AI implementation",
+        "Shape industry standards and practices"
+      ],
+      "skills_to_develop": [
+        "AI business applications and ROI",
+        "Change management and organizational psychology",
+        "Strategic planning and execution",
+        "Ethical AI and governance frameworks"
+      ]
+    }
+  ]
+}
