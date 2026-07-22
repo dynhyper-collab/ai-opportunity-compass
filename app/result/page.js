@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { calculateProfile } from '../../lib/scoring';
-import profilesData from '../../data/questions.json';
+import questionsData from '../../data/questions.json';
+import profilesConfig from '../../data/profiles.json';
 
 export default function ResultPage() {
   const router = useRouter();
@@ -24,7 +25,7 @@ export default function ResultPage() {
       }
 
       const answers = JSON.parse(storedAnswers);
-      const questions = profilesData.questions;
+      const questions = questionsData.questions;
 
       // Calculate user profile using scoring engine
       const result = calculateProfile(answers, questions);
@@ -36,7 +37,7 @@ export default function ResultPage() {
       }
 
       // Find the primary profile data
-      const primaryProfileData = profilesData.profiles.find(
+      const primaryProfileData = profilesConfig.profiles.find(
         (p) => p.id === result.primaryProfile
       );
 
@@ -135,10 +136,11 @@ export default function ResultPage() {
                   <div className="flex-1">
                     <div className="flex justify-between mb-2">
                       <span className="font-medium text-gray-800 capitalize">
-                        {profileType === 'builder' && '🔨 Builder'}
-                        {profileType === 'analyzer' && '📊 Analyzer'}
-                        {profileType === 'creator' && '🎨 Creator'}
-                        {profileType === 'strategist' && '🎯 Strategist'}
+                        {profileType === 'builder' && '🔨 AI Builder'}
+                        {profileType === 'operator' && '⚙️ AI Operator'}
+                        {profileType === 'creator' && '🎨 AI Creator'}
+                        {profileType === 'entrepreneur' && '🚀 AI Entrepreneur'}
+                        {profileType === 'strategist' && '🎯 AI Strategist'}
                       </span>
                       <span className="text-lg font-bold text-indigo-600">{score}</span>
                     </div>
@@ -146,8 +148,9 @@ export default function ResultPage() {
                       <div
                         className={`h-3 rounded-full transition-all ${
                           profileType === 'builder' ? 'bg-blue-500' :
-                          profileType === 'analyzer' ? 'bg-green-500' :
+                          profileType === 'operator' ? 'bg-green-500' :
                           profileType === 'creator' ? 'bg-purple-500' :
+                          profileType === 'entrepreneur' ? 'bg-amber-500' :
                           'bg-red-500'
                         }`}
                         style={{ width: `${score}%` }}
