@@ -1,0 +1,204 @@
+{
+  "profiles": [
+    {
+      "id": "builder",
+      "name": "AI Builder",
+      "tagline": "Turn AI capabilities into working systems and intelligent applications.",
+      "description": "AI Builders create technical value by engineering AI systems, agents, and automated workflows. They translate capabilities into functioning code and infrastructure. Their advantage comes from turning ideas into working systems faster than competitors, which creates defensible technical advantages and product differentiation.",
+      "signature_question": "What can I build with AI that doesn't exist yet?",
+      "strengths": [
+        "Deep technical understanding of AI capabilities and limitations",
+        "Ability to prototype and iterate quickly",
+        "Can identify and solve technical bottlenecks",
+        "Build defensible products through superior implementation"
+      ],
+      "blind_spots": [
+        "May optimize for technical elegance over market demand",
+        "Risk of over-engineering solutions before validating need",
+        "Often underestimate go-to-market and business complexity",
+        "Can be disconnected from how end users actually want to work"
+      ],
+      "opportunities": [
+        "Building custom AI agents for specific industries or workflows",
+        "Creating developer tools and platforms that abstract AI complexity",
+        "Developing specialized AI models fine-tuned for niche domains",
+        "Building internal AI infrastructure for organizations",
+        "Creating APIs or integrations that give enterprises AI capabilities"
+      ],
+      "skills_to_develop": [
+        "Understanding product-market fit and user validation",
+        "Business model thinking and unit economics",
+        "Communicating technical value to non-technical stakeholders",
+        "Software architecture for scalable AI systems",
+        "Staying current with rapidly evolving AI capabilities"
+      ],
+      "recommended_actions": [
+        "Build a small AI tool or agent and share it with real users—measure engagement",
+        "Study one non-technical domain deeply to understand where AI creates real value",
+        "Learn the business models of successful AI companies in your space",
+        "Collaborate with operators and strategists to understand organizational constraints",
+        "Document your technical decisions and learnings in a public way"
+      ]
+    },
+    {
+      "id": "operator",
+      "name": "AI Operator",
+      "tagline": "Integrate AI into workflows to create operational leverage and measurable results.",
+      "description": "AI Operators create value by embedding AI into existing processes, systems, and teams to drive efficiency and enable better decision-making. Their advantage comes from deeply understanding how organizations actually work and deploying AI solutions that fit seamlessly into real workflows, creating measurable productivity gains and competitive advantage.",
+      "signature_question": "How can AI make what we're already doing faster, cheaper, or better?",
+      "strengths": [
+        "Expert at understanding organizational processes and workflows",
+        "Pragmatic about implementation constraints and feasibility",
+        "Skilled at measuring and demonstrating ROI from AI adoption",
+        "Build trust within organizations through reliable delivery"
+      ],
+      "blind_spots": [
+        "May default to incremental improvements over transformative opportunities",
+        "Risk of anchoring to current processes rather than reimagining them",
+        "Often constrained by organizational inertia and legacy systems",
+        "Can underestimate the potential of completely new AI-first approaches"
+      ],
+      "opportunities": [
+        "AI-powered process automation that reduces operational costs",
+        "Implementing AI-based decision support systems for complex workflows",
+        "Training teams to use AI tools effectively in their daily work",
+        "Building AI-enhanced internal tools that multiply team productivity",
+        "Consulting on AI adoption strategies for established organizations"
+      ],
+      "skills_to_develop": [
+        "Change management and organizational psychology",
+        "Data literacy and understanding data quality requirements",
+        "Identifying and prioritizing high-ROI use cases systematically",
+        "Building AI literacy in non-technical teams",
+        "Measuring and communicating business impact"
+      ],
+      "recommended_actions": [
+        "Audit your current work for 3-5 repetitive tasks where AI could save time daily",
+        "Experiment with AI tools in your existing workflows and document results",
+        "Study an industry adjacent to yours to see how they're using AI operationally",
+        "Learn to speak the language of business impact and cost savings",
+        "Mentor others on practical AI adoption rather than keeping it to yourself"
+      ]
+    },
+    {
+      "id": "creator",
+      "name": "AI Creator",
+      "tagline": "Amplify creative output and human expression through AI collaboration.",
+      "description": "AI Creators generate value by using AI as a creative partner to produce content, design, communication, and new forms of expression at scale. Their advantage comes from combining human judgment, taste, and intention with AI's generative capabilities, creating unique value that's difficult to replicate without both human and AI contributions.",
+      "signature_question": "What new creative possibilities open up when I use AI as my collaborator?",
+      "strengths": [
+        "Develop unique creative voices and perspectives",
+        "Rapidly prototype and iterate on creative ideas",
+        "Produce higher volume of creative output without burnout",
+        "Combine human taste with AI capabilities for novel results"
+      ],
+      "blind_spots": [
+        "Risk of derivative or generic output if relying too heavily on AI defaults",
+        "Audiences may discount work perceived as AI-generated rather than handmade",
+        "Hard to build sustainable business models around creative output alone",
+        "Can struggle to develop deep expertise when moving quickly"
+      ],
+      "opportunities": [
+        "Building personal brand through consistent high-volume creative output",
+        "Creating multimedia content (writing, design, music, video) at scale",
+        "Offering AI-augmented creative services to small businesses or creators",
+        "Developing AI tools specifically designed for creative workflows",
+        "Publishing or licensing creative work at new price points"
+      ],
+      "skills_to_develop": [
+        "Mastery of generative AI tools specific to your medium",
+        "Strong creative judgment and taste to curate AI outputs",
+        "Building an audience and community around creative work",
+        "Understanding copyright and ethical considerations",
+        "Storytelling and communication of your creative vision"
+      ],
+      "recommended_actions": [
+        "Create one piece of creative work per week using AI tools and publish it",
+        "Develop a distinct point of view about what makes good creative work",
+        "Study creators who are successfully building audiences with AI-assisted work",
+        "Experiment with combining multiple AI tools to create something novel",
+        "Engage directly with your audience about your creative process"
+      ]
+    },
+    {
+      "id": "entrepreneur",
+      "name": "AI Entrepreneur",
+      "tagline": "Identify opportunities, validate markets, and build AI-powered businesses.",
+      "description": "AI Entrepreneurs create value by recognizing gaps in the market, validating customer need, and building scalable businesses that deliver AI-enabled solutions. Their advantage comes from combining market insight, customer empathy, and execution speed to capture emerging opportunities before they become commoditized.",
+      "signature_question": "What problem are customers willing to pay for that AI can uniquely solve?",
+      "strengths": [
+        "Skilled at identifying market gaps and customer needs",
+        "Move quickly from idea to validation and iteration",
+        "Build relationships with customers and stakeholders",
+        "Comfortable with uncertainty and adapting based on feedback"
+      ],
+      "blind_spots": [
+        "May pursue opportunities before technology is mature enough",
+        "Risk of building products faster than the market can adopt them",
+        "Often underestimate the time required to build reliable AI systems",
+        "Can prioritize growth over sustainable unit economics"
+      ],
+      "opportunities": [
+        "Building SaaS products that wrap AI capabilities for specific verticals",
+        "Creating AI-powered services that directly serve end customers",
+        "Licensing AI models or datasets to other businesses",
+        "Offering AI implementation consulting for enterprises",
+        "Building B2B2C platforms that embed AI capabilities for partners"
+      ],
+      "skills_to_develop": [
+        "Deep understanding of your customer's business and economics",
+        "Ability to identify and validate product-market fit rigorously",
+        "Sales and customer acquisition strategies",
+        "Unit economics and financial modeling for sustainable growth",
+        "Team building and organizational scaling"
+      ],
+      "recommended_actions": [
+        "Talk to 20+ potential customers about their biggest problems in your space",
+        "Build a minimal prototype and get it in users' hands within 1 month",
+        "Track your unit economics carefully from day one",
+        "Network with other entrepreneurs and investors in the AI space",
+        "Focus on one specific customer segment and own it deeply"
+      ]
+    },
+    {
+      "id": "strategist",
+      "name": "AI Strategist",
+      "tagline": "Guide organizations through AI transformation and recognize emerging opportunities.",
+      "description": "AI Strategists create value by understanding AI's broader implications, identifying where transformative change is happening, and guiding organizations or industries through strategic transitions. Their advantage comes from synthesizing technical, market, organizational, and societal perspectives to make decisions that position stakeholders for long-term success.",
+      "signature_question": "What systemic changes is AI enabling, and how should we prepare for them?",
+      "strengths": [
+        "Synthesize complex information from multiple domains",
+        "Identify emerging trends and inflection points early",
+        "Build credibility through deep domain expertise",
+        "Make decisions that account for second and third-order effects"
+      ],
+      "blind_spots": [
+        "Can be detached from day-to-day execution and real constraints",
+        "Risk of being wrong on emerging trends with high confidence",
+        "May overlook small, immediate opportunities while focused on big picture",
+        "Insights only create value if organizations actually act on them"
+      ],
+      "opportunities": [
+        "Executive advisory and board positions guiding AI strategy",
+        "Industry research and trend analysis that informs competitive strategy",
+        "Keynote speaking and thought leadership building influence",
+        "Consulting on organizational transformation and change management",
+        "Teaching and mentoring the next generation of AI leaders"
+      ],
+      "skills_to_develop": [
+        "Deep knowledge of both AI capabilities and organizational dynamics",
+        "Ability to communicate complex ideas clearly to diverse audiences",
+        "Scenario planning and strategic foresight methodologies",
+        "Understanding of economics, policy, and societal implications",
+        "Influencing without direct authority"
+      ],
+      "recommended_actions": [
+        "Develop a clear perspective on one major AI trend and write about it",
+        "Identify the 3 most important decisions your industry will face from AI",
+        "Build relationships with leaders in your domain and stay deeply informed",
+        "Create a platform to share strategic insights regularly",
+        "Advise at least one organization on their AI strategy"
+      ]
+    }
+  ]
+}
