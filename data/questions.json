@@ -69,7 +69,7 @@
       "options": [
         {
           "id": "2a",
-          "label": "Building or training AI models and systems",
+          "label": "Building AI applications, agents, or automated systems",
           "score": {
             "builder": 3,
             "operator": 0,
