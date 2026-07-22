@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": 1,
-      "dimension": "Resource",
+      "dimension": "resource",
       "question": "What is your strongest existing advantage today?",
       "options": [
         {
@@ -64,7 +64,7 @@
     },
     {
       "id": 2,
-      "dimension": "AI Literacy",
+      "dimension": "ai_literacy",
       "question": "How do you currently use AI in your work or life?",
       "options": [
         {
@@ -126,7 +126,7 @@
     },
     {
       "id": 3,
-      "dimension": "Opportunity Direction",
+      "dimension": "opportunity_direction",
       "question": "Where do you believe AI can create the most value for you?",
       "options": [
         {
@@ -188,7 +188,7 @@
     },
     {
       "id": 4,
-      "dimension": "Agency",
+      "dimension": "agency",
       "question": "When you discover a new AI opportunity, what do you usually do first?",
       "options": [
         {
@@ -250,7 +250,7 @@
     },
     {
       "id": 5,
-      "dimension": "Creation Mode",
+      "dimension": "creation_mode",
       "question": "How would you most like to create value with AI?",
       "options": [
         {
@@ -312,7 +312,7 @@
     },
     {
       "id": 6,
-      "dimension": "Market Orientation",
+      "dimension": "market_orientation",
       "question": "How comfortable are you solving problems for other people or organizations?",
       "options": [
         {
@@ -374,7 +374,7 @@
     },
     {
       "id": 7,
-      "dimension": "Experimentation",
+      "dimension": "experimentation",
       "question": "If you spend 3 months on an AI project without income, what would you do?",
       "options": [
         {
@@ -436,7 +436,7 @@
     },
     {
       "id": 8,
-      "dimension": "Personal Leverage",
+      "dimension": "personal_leverage",
       "question": "What resources can you leverage in the AI era?",
       "options": [
         {
@@ -498,7 +498,7 @@
     },
     {
       "id": 9,
-      "dimension": "Commitment",
+      "dimension": "commitment",
       "question": "How much time and energy can you invest in exploring AI opportunities?",
       "options": [
         {
@@ -560,7 +560,7 @@
     },
     {
       "id": 10,
-      "dimension": "Future Identity",
+      "dimension": "future_identity",
       "question": "Which AI-era role do you want to grow into over the next 5 years?",
       "options": [
         {
