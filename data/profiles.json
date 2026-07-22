@@ -2,7 +2,7 @@
   "profiles": [
     {
       "id": "builder",
-      "name": "AI Builder",
+      "name": "The AI Builder",
       "tagline": "Turn AI capabilities into working systems and intelligent applications.",
       "description": "AI Builders create technical value by engineering AI systems, agents, and automated workflows. They translate capabilities into functioning code and infrastructure. Their advantage comes from turning ideas into working systems faster than competitors, which creates defensible technical advantages and product differentiation.",
       "signature_question": "What can I build with AI that doesn't exist yet?",
@@ -42,7 +42,7 @@
     },
     {
       "id": "operator",
-      "name": "AI Operator",
+      "name": "The AI Operator",
       "tagline": "Integrate AI into workflows to create operational leverage and measurable results.",
       "description": "AI Operators create value by embedding AI into existing processes, systems, and teams to drive efficiency and enable better decision-making. Their advantage comes from deeply understanding how organizations actually work and deploying AI solutions that fit seamlessly into real workflows, creating measurable productivity gains and competitive advantage.",
       "signature_question": "How can AI make what we're already doing faster, cheaper, or better?",
@@ -82,7 +82,7 @@
     },
     {
       "id": "creator",
-      "name": "AI Creator",
+      "name": "The AI Creator",
       "tagline": "Amplify creative output and human expression through AI collaboration.",
       "description": "AI Creators generate value by using AI as a creative partner to produce content, design, communication, and new forms of expression at scale. Their advantage comes from combining human judgment, taste, and intention with AI's generative capabilities, creating unique value that's difficult to replicate without both human and AI contributions.",
       "signature_question": "What new creative possibilities open up when I use AI as my collaborator?",
@@ -122,7 +122,7 @@
     },
     {
       "id": "entrepreneur",
-      "name": "AI Entrepreneur",
+      "name": "The AI Entrepreneur",
       "tagline": "Identify opportunities, validate markets, and build AI-powered businesses.",
       "description": "AI Entrepreneurs create value by recognizing gaps in the market, validating customer need, and building scalable businesses that deliver AI-enabled solutions. Their advantage comes from combining market insight, customer empathy, and execution speed to capture emerging opportunities before they become commoditized.",
       "signature_question": "What problem are customers willing to pay for that AI can uniquely solve?",
@@ -162,7 +162,7 @@
     },
     {
       "id": "strategist",
-      "name": "AI Strategist",
+      "name": "The AI Strategist",
       "tagline": "Guide organizations through AI transformation and recognize emerging opportunities.",
       "description": "AI Strategists create value by understanding AI's broader implications, identifying where transformative change is happening, and guiding organizations or industries through strategic transitions. Their advantage comes from synthesizing technical, market, organizational, and societal perspectives to make decisions that position stakeholders for long-term success.",
       "signature_question": "What systemic changes is AI enabling, and how should we prepare for them?",
