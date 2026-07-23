@@ -72,14 +72,6 @@ export default function Home() {
                 Discover My Profile →
               </a>
 
-
-              <a
-                href="#learn-more"
-                className="px-8 py-4 bg-white hover:bg-slate-50 text-slate-900 font-semibold rounded-xl border border-slate-200 transition-all duration-200 text-center"
-              >
-                Learn More
-              </a>
-
             </div>
 
           </div>
