@@ -1,7 +1,10 @@
+import "../styles/globals.css";
+
 export const metadata = {
-  title: 'ai-opportunity-compass',
-  description: 'Understand how you can create value in the AI era.'
-}
+  title: "AI Opportunity Compass | AI Worldview",
+  description:
+    "Understand how you can create value in the AI era.",
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -10,5 +13,5 @@ export default function RootLayout({ children }) {
         {children}
       </body>
     </html>
-  )
+  );
 }
